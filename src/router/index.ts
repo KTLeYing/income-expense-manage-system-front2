@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
+import UserLogin from "../components/common/UserLogin.vue"
+import EditorDemo from "../components/common/EditorDemo.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
   },
@@ -16,6 +18,16 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/",
+    name: "UserLogin",
+    component: UserLogin,
+  },
+  {
+    path: "/editorDemo",
+    name: "EditorDemo",
+    component: EditorDemo,
+  }
 ];
 
 const router = createRouter({
